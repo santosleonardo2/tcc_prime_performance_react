@@ -1,0 +1,3 @@
+rootProject.name = 'tcc_prime_performance_react'
+
+include ':app'
