@@ -36,7 +36,8 @@ class SearchPrime extends Component {
          }
          const endTime = performance.now();
          // console.log(`${x} end time: ${endTime}`);
-         console.log(`${x} duration (ms): ${endTime - startTime}`);
+         // console.log(`${x} duration (ms): ${endTime - startTime}`);
+         console.log(`${endTime - startTime}`);
          // console.log(primeNumbers);
       }
 
