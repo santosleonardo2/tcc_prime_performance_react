@@ -11,7 +11,7 @@ class SearchPrime extends Component {
 
    calculatePrimeNumbers() {
       for (let x = 0; x < this.state.times; x++) {
-         const startTime = Date.now();
+         const startTime = performance.now();
          const value = Number(this.state.value);
 
          // console.log(`${x} start time: ${startTime}`);
@@ -21,9 +21,9 @@ class SearchPrime extends Component {
           */
          let primeNumbers = [];
          let count = 0;
-         for (let i = 2; i < Math.sqrt(value); i++) {
+         for (let i = 2; i <= value; i++) {
             count = 0;
-            for (let j = 2; j < i; j++) {
+            for (let j = 2; j < Math.ceil(Math.sqrt(i)); j++) {
                if (i % j === 0) {
                   count++;
                   break;
@@ -34,42 +34,10 @@ class SearchPrime extends Component {
                primeNumbers.push(i);
             }
          }
-         const endTime = Date.now();
+         const endTime = performance.now();
          // console.log(`${x} end time: ${endTime}`);
          console.log(`${x} duration (ms): ${endTime - startTime}`);
          // console.log(primeNumbers);
-
-
-         /*
-          * MORE EFFICIENT METHOD
-          */
-         // let allNumbers = [];
-         // let primes = [];
-         //
-         // allNumbers[0] = false;
-         // allNumbers[1] = false;
-         // for (let i = 2; i < value; i++) {
-         //    allNumbers[i] = true;
-         // }
-         //
-         // for (let i = 2; i < Math.sqrt(value); i++) {
-         //    if (allNumbers[i]) {
-         //       for (let j = i * i; j < value; j += i) {
-         //          allNumbers[j] = false;
-         //       }
-         //    }
-         // }
-         //
-         // for (let i = 2; i < value; i++) {
-         //    if (allNumbers[i]) {
-         //       primes.push(i);
-         //    }
-         // }
-         //
-         // const endTime2 = Date.now();
-         // console.log(`End time: ${endTime2}`);
-         // console.log(`Duration (ms): ${endTime2 - startTime}`);
-         // console.log(primes);
       }
 
       // this.setState({ shouldDisplayResult: true });
