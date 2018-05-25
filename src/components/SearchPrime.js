@@ -11,7 +11,7 @@ class SearchPrime extends Component {
 
    calculatePrimeNumbers() {
       for (let x = 0; x < this.state.times; x++) {
-         const startTime = performance.now();
+         const startTime = Date.now();
          const value = Number(this.state.value);
 
          // console.log(`${x} start time: ${startTime}`);
@@ -34,7 +34,7 @@ class SearchPrime extends Component {
                primeNumbers.push(i);
             }
          }
-         const endTime = performance.now();
+         const endTime = Date.now();
          // console.log(`${x} end time: ${endTime}`);
          // console.log(`${x} duration (ms): ${endTime - startTime}`);
          console.log(`${endTime - startTime}`);
