@@ -3,7 +3,7 @@ import { Text, View } from 'react-native';
 import { Card, CardSession, Header, InputText, Button } from './common';
 
 class SearchPrime extends Component {
-   state = ({ numberOfPimes: 0, shouldDisplayResult: false, value: '', times: 30 });
+   state = ({ numberOfPimes: 0, shouldDisplayResult: false, value: '', times: 1 });
 
    updateValue(newValue) {
       this.setState({ value: newValue });
